@@ -28,6 +28,8 @@ services:
     env_file: ./docker.env
     volumes:
       - database-data:/var/lib/postgresql/data
+    ports:
+    - 5003:5432
     healthcheck:
       test: ["CMD", "pg_isready"]
       interval: 30s
